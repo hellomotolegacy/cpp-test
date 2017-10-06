@@ -15,6 +15,13 @@ int clear() //Used for 'clearing' the window
     std::cout << "\n\n";
 }
 
+int pause() //Press ENTER thing
+{
+	std::cout << Prompt;
+	getline (std::cin, blankChar);
+	clear();
+}
+
 int intro()
 {
     std::cout << "what's gender?? (1 for male, 2 for female)\n";
@@ -25,23 +32,17 @@ int intro()
         gender = "girl";
     clear();
     std::cout << "oh so u r a " << gender << ". kewl.\n";
-    std::cout << Prompt;
-    getline (std::cin, blankChar);
-    clear();
+    pause();
     std::cout << "Sup fam give name xdddd\n";;
     getline (std::cin, firstName);
     clear();
     std::cout << firstName << "? That's a stupid name xdddddddddddd\n";
-    std::cout << Prompt;
-    getline (std::cin, blankChar);
-    clear();
+    pause();
     std::cout << "ok " << firstName << ", what about your last name?\nis it as stupid?\n";
     getline (std::cin, lastName);
     clear();
     std::cout << "wow. " << firstName << " " << lastName << " is the dumbest name i've ever heard!\n";
-    std::cout << Prompt;
-    getline (std::cin, blankChar);
-    clear();
+    pause();
 }
 
 int main()
