@@ -7,10 +7,14 @@ std::string Prompt = "Press ENTER to continue"; //FIXME - Find a better way :pp
 std::string firstName;
 std::string lastName;
 
+int intro()
+{
+    std::cout << "Sup fam give name xdddd\n";;
+    getline (std::cin, firstName);
+    std::cout << firstName << "? That's a stupid name xdddddddddddd\n";
+}
+
 int main()
 {
-    std::cout << "xd\n";
-    std::cout << Prompt;
-    getline (std::cin, firstName);
-    std::cout << "xd " << firstName << "\n";
+    intro();
 }
