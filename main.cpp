@@ -25,8 +25,9 @@ int intro()
         gender = "girl";
     clear();
     std::cout << "oh so u r a " << gender << ". kewl.\n";
-    std::cout << Prompt << "\n";
+    std::cout << Prompt;
     getline (std::cin, blankChar);
+    clear();
     std::cout << "Sup fam give name xdddd\n";;
     getline (std::cin, firstName);
     clear();
