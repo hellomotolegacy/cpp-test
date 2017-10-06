@@ -1,4 +1,5 @@
 //Include our libraries, yo
+#include "stdafx.h"
 #include <iostream>
 #include <string>
 
@@ -10,19 +11,19 @@ std::string gender;
 std::string firstName;
 std::string lastName;
 
-int clear() //Used for 'clearing' the window
+void clear() //Used for 'clearing' the window
 {
     std::cout << "\n\n";
 }
 
-int pause() //Press ENTER thing
+void pause() //Press ENTER thing
 {
-	std::cout << Prompt;
-	getline (std::cin, blankChar);
-	clear();
+    std::cout << Prompt;
+    getline (std::cin, blankChar);
+    clear();
 }
 
-int intro()
+void intro()
 {
     std::cout << "what's gender?? (1 for male, 2 for female)\n";
     getline (std::cin, gen);
