@@ -23,6 +23,32 @@ void pause() //Press ENTER thing
     clear();
 }
 
+void getFirstName()
+{
+	std::cout << "What's your first name?\n";;
+    getline (std::cin, firstName);
+	if (strlen(firstName.c_str()) > 15)
+	{
+		std::cout << "That's a bit too long, try again.\n";
+		pause();
+		getFirstName();
+	}
+    clear();
+    std::cout << firstName << "? What a lovely name!\n";
+}
+
+void getLastName()
+{
+	std::cout << "Alright " << firstName << ", what's your last name?\n";
+    getline (std::cin, lastName);
+	if (strlen(lastName.c_str()) > 15)
+	{
+		std::cout << "\nThat's a bit too long, try again.\n";
+		pause();
+		getLastName();
+	}
+}
+
 void intro()
 {
 	std::cout << "Hello!\n";
@@ -40,13 +66,9 @@ void intro()
     clear();
     std::cout << "Ah, so you're a " << gender << "!\n";
     pause();
-    std::cout << "What's your first name?\n";;
-    getline (std::cin, firstName);
-    clear();
-    std::cout << firstName << "? What a lovely name!\n";
+	getFirstName();
     pause();
-    std::cout << "Alright " << firstName << ", what's your last name?\n";
-    getline (std::cin, lastName);
+    getLastName();
     clear();
     std::cout << "So you're " << firstName << " " << lastName << ". Great!\n";
     pause();
