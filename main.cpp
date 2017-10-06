@@ -25,25 +25,35 @@ void pause() //Press ENTER thing
 
 void intro()
 {
-    std::cout << "what's gender?? (1 for male, 2 for female)\n";
+	std::cout << "Hello!\n";
+	pause();
+	std::cout << "My name is <FIXME>!\n";
+	pause();
+	std::cout << "<FIXME>\n";
+	pause();
+    std::cout << "So tell me, are you a boy (1), or a girl (2)?\n";
     getline (std::cin, gen);
     if (gen == "1")
         gender = "boy";
     else
         gender = "girl";
     clear();
-    std::cout << "oh so u r a " << gender << ". kewl.\n";
+    std::cout << "Ah, so you're a " << gender << "!\n";
     pause();
-    std::cout << "Sup fam give name xdddd\n";;
+    std::cout << "What's your first name?\n";;
     getline (std::cin, firstName);
     clear();
-    std::cout << firstName << "? That's a stupid name xdddddddddddd\n";
+    std::cout << firstName << "? What a lovely name!\n";
     pause();
-    std::cout << "ok " << firstName << ", what about your last name?\nis it as stupid?\n";
+    std::cout << "Alright " << firstName << ", what's your last name?\n";
     getline (std::cin, lastName);
     clear();
-    std::cout << "wow. " << firstName << " " << lastName << " is the dumbest name i've ever heard!\n";
+    std::cout << "So you're " << firstName << " " << lastName << ". Great!\n";
     pause();
+	std::cout << firstName << "!\n";
+	pause();
+	std::cout << "Your journey awaits! Go experience amazing things and meet new people!\n";
+	pause();
 }
 
 int main()
