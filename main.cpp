@@ -4,12 +4,14 @@
 #include <string>
 
 //Global definitions
+std::string getDir;
 std::string blankChar = ""; //Used for Prompt
 std::string Prompt = "Press ENTER to continue"; //FIXME - Find a better way :pp
 std::string gen;
 std::string gender;
 std::string firstName;
 std::string lastName;
+int direction;
 
 void clear() //Used for 'clearing' the window
 {
@@ -21,6 +23,51 @@ void pause() //Press ENTER thing
     std::cout << Prompt;
     getline (std::cin, blankChar);
     clear();
+}
+
+void calcDir()
+{
+	if (getDir == "go north") direction = 1; return;
+	if (getDir == "north") direction = 1; return;
+	if (getDir == "up") direction = 1; return;
+	if (getDir == "go south") direction = 3; return;
+	if (getDir == "south") direction = 3; return;
+	if (getDir == "down") direction = 3; return;
+	if (getDir == "go west") direction = 4; return;
+	if (getDir == "west") direction = 4; return;
+	if (getDir == "left") direction = 4; return;
+	if (getDir == "go east") direction = 2; return;
+	if (getDir == "east") direction = 2; return;
+	if (getDir == "right") direction = 2; return;
+}
+
+void getDirection()
+{
+	clear();
+	std::cout << "What will you do?\n";
+	getline (std::cin, getDir);
+	//take whatever the player says and convert it to make traveling easier
+	calcDir();
+}
+
+void travelTo(std::string north, std::string east, std::string south, std::string west)
+{
+	std::cout << "To the North " << north << ".\n";
+	std::cout << "To the East " << east << ".\n";
+	std::cout << "To the South " << south << ".\n";
+	std::cout << "To the West " << west << ".\n";
+	getDirection();
+}
+
+void spawn()
+{
+	std::cout << "You awaken in a patch of grass.\n";
+	pause();
+	std::cout << firstName << ": Was I only dreaming?\n";
+	pause();
+	travelTo("lies a forest", "lies a house", "there is a large stone wall", "the valley continues");
+	std::cout << getDir;
+	pause();
 }
 
 void getFirstName()
@@ -74,8 +121,9 @@ void intro()
     pause();
 	std::cout << firstName << "!\n";
 	pause();
-	std::cout << "Your journey awaits! Go experience amazing things and meet new people!\n";
+	std::cout << "<FIXME>\n";
 	pause();
+	spawn();
 }
 
 int main()
