@@ -3,27 +3,29 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 //Global definitions
-std::string getDir;
-std::string blankChar = ""; //Used for the 'Press ENTER to Continue' prompt
-std::string Prompt = "Press ENTER to continue"; //FIXME - Find a better way :pp
-std::string gen;
-std::string gender;
-std::string firstName;
-std::string lastName;
+string getDir;
+string blankChar = ""; //Used for the 'Press ENTER to Continue' prompt
+string Prompt = "Press ENTER to continue"; //FIXME - Find a better way :pp
+string gen;
+string gender;
+string firstName;
+string lastName;
 int direction;
 
 //'Clear' the window using two line breaks.
 void clear()
 {
-    std::cout << "\n\n";
+    cout << "\n\n";
 }
 
 //Print the 'Press ENTER to Continue' text and insert a getline so if we actually hit enter, we move on
 void pause()
 {
-    std::cout << Prompt;
-    getline (std::cin, blankChar);
+    cout << Prompt;
+    getline (cin, blankChar);
     clear();
 }
 
@@ -48,30 +50,30 @@ void calcDir()
 void getDirection()
 {
 	clear();
-	std::cout << "What will you do?\n";
-	getline (std::cin, getDir);
+	cout << "What will you do?\n";
+	getline (cin, getDir);
 	calcDir();	//Execute the function above to convert.
 }
 
 //Used to make traveling a LOT easier, one function instead of multiple outputs.
-void travelTo(std::string north, std::string east, std::string south, std::string west)
+void travelTo(string north, string east, string south, string west)
 {
-	std::cout << "To the North " << north << ".\n";
-	std::cout << "To the East " << east << ".\n";
-	std::cout << "To the South " << south << ".\n";
-	std::cout << "To the West " << west << ".\n";
+	cout << "To the North " << north << ".\n";
+	cout << "To the East " << east << ".\n";
+	cout << "To the South " << south << ".\n";
+	cout << "To the West " << west << ".\n";
 	getDirection();
 }
 
 //Executed directly after going through the introduction, welcome to the game!
 void spawn()
 {
-	std::cout << "You awaken in a patch of grass.\n";
+	cout << "You awaken in a patch of grass.\n";
 	pause();
-	std::cout << firstName << ": Was I only dreaming?\n";
+	cout << firstName << ": Was I only dreaming?\n";
 	pause();
 	travelTo("lies a forest", "lies a house", "there is a large stone wall", "the valley continues");	//Run travelTo, optimization!
-	std::cout << getDir;
+	cout << getDir;
 	pause();
 }
 
@@ -79,26 +81,26 @@ void spawn()
 //We just re-run the function instead of going through the whole introduction again.
 void getFirstName()
 {
-	std::cout << "What's your first name?\n";;
-	getline (std::cin, firstName);
+	cout << "What's your first name?\n";;
+	getline (cin, firstName);
 	if (strlen(firstName.c_str()) > 15)
 	{
-		std::cout << "That's a bit too long, try again.\n";
+		cout << "That's a bit too long, try again.\n";
 		pause();
 		getFirstName();
 	}
 	clear();
-	std::cout << firstName << "? What a lovely name!\n";
+	cout << firstName << "? What a lovely name!\n";
 }
 
 //Same purpose as getFirstName, but is applied for the user's last name.
 void getLastName()
 {
-	std::cout << "Alright " << firstName << ", what's your last name?\n";
-	getline (std::cin, lastName);
+	cout << "Alright " << firstName << ", what's your last name?\n";
+	getline (cin, lastName);
 	if (strlen(lastName.c_str()) > 15)
 	{
-		std::cout << "\nThat's a bit too long, try again.\n";
+		cout << "\nThat's a bit too long, try again.\n";
 		pause();
 		getLastName();
 	}
@@ -108,30 +110,30 @@ void getLastName()
 // FIXME - Need a plot!
 void intro()
 {
-	std::cout << "Hello!\n";
+	cout << "Hello!\n";
 	pause();
-	std::cout << "My name is <FIXME>!\n";
+	cout << "My name is <FIXME>!\n";
 	pause();
-	std::cout << "<FIXME>\n";
+	cout << "<FIXME>\n";
 	pause();
-	std::cout << "So tell me, are you a boy (1), or a girl (2)?\n";
-	getline (std::cin, gen);
+	cout << "So tell me, are you a boy (1), or a girl (2)?\n";
+	getline (cin, gen);
 	if (gen == "1")
 		gender = "boy";
    	 else
         	gender = "girl";	//FIXME - Make this it's own function so if the user chooses anything but 1 or 2 it wont't default to female.
     	clear();
-    	std::cout << "Ah, so you're a " << gender << "!\n";
+    	cout << "Ah, so you're a " << gender << "!\n";
     	pause();
 	getFirstName();
     	pause();
     	getLastName();
     	clear();
-    	std::cout << "So you're " << firstName << " " << lastName << ". Great!\n";
+    	cout << "So you're " << firstName << " " << lastName << ". Great!\n";
     	pause();
-	std::cout << firstName << "!\n";
+	cout << firstName << "!\n";
 	pause();
-	std::cout << "<FIXME>\n";
+	cout << "<FIXME>\n";
 	pause();
 	spawn();
 }
