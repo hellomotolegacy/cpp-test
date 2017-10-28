@@ -78,14 +78,10 @@ void spawn()
 	travelTo("lies a forest", "lies a house", "there is a large stone wall", "the valley continues");	//Run travelTo, optimization!
 	switch(direction)
 	{
-	  case 1:
-	    North1();
-    case 2:
-      East1();
-    case 3:
-      South1();
-    case 4:
-      West1();
+		case 1: North1(); break;
+		case 2: East1(); break;
+		case 3: South1(); break;
+		case 4: West1(); break;
 	}
 	pause();
 }

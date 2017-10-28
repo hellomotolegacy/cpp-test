@@ -191,6 +191,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath="area1.cpp"
+				>
+			</File>
+			<File
 				RelativePath="main.cpp"
 				>
 			</File>
@@ -200,6 +204,10 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath="area1.h"
+				>
+			</File>
 			<File
 				RelativePath="stdafx.h"
 				>
