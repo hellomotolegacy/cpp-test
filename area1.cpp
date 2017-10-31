@@ -1,7 +1,13 @@
+//Include our libraries
 #include "stdafx.h"		//Comment me if NOT using VisualStudio!
 #include <iostream>
 #include <string>
+
+//Include files related to project
+#include "main.h"
+
 using namespace std;
+
 void North1()
 {
   cout << "You traveled North. Called from another file!\n";

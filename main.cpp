@@ -3,8 +3,10 @@
 #include <iostream>
 #include <string>
 
-//Include our areas
+//Include files related to project
 #include "area1.h"
+#include "main.h"
+#include "coord.h"
 
 using namespace std;
 
@@ -16,7 +18,6 @@ string gen;
 string gender;
 string firstName;
 string lastName;
-int direction;
 
 //'Clear' the window using two line breaks.
 void clear()
@@ -47,6 +48,7 @@ void calcDir()
 	if (getDir == "go east") direction = 2; return;
 	if (getDir == "east") direction = 2; return;
 	if (getDir == "right") direction = 2; return;
+	calcCoords();
 }
 
 //For entering where you want to travel
