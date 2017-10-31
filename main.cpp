@@ -1,3 +1,12 @@
+/* =====================================
+                  C++ Test
+    Test Program to improve C++ fluency
+   =====================================
+     CREATED BY IAN BOWLING/MOTOLEGACY
+*/
+    
+
+
 //Include our libraries
 #include "stdafx.h"		//Comment me if NOT using VisualStudio!
 #include <iostream>
